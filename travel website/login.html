@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VP Travel</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <script>
+        function validateform() {
+            var name = document.myform.email.value;
+            var password = document.myform.pswd.value;
+            var cpassword = document.myform.cpswd.value;
+            if (name == null || name == "") {
+                alert("Please Enter Username");
+                return false;
+            } else if (password.length < 8) {
+                alert("Password must be at least 8 characters long.");
+                return false;
+            }
+            else if (cpassword != password) {
+                alert("Both Password must be same");
+            }
+        }
+        function vform() {
+            var name = document.form.txt.value;
+            var emailid = document.form.email.value;
+            var password = document.form.pswd.value;
+            if (name == null || name == "") {
+                alert("Please Enter Username");
+                return false;
+            } else if (emailid == "") {
+                alert("Please Enter email ID");
+                return false;
+            }else if (password.length < 8) {
+                alert("Password must be at least 8 characters long.");
+                return false;
+            }
+            else{
+                alert("You are succesfully logged in")
+            }
+        }
+    </script>
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hiddden="true">
+        <div class="signup">
+            <form action="#" name="form" >
+                <label for="chk" aria-hiddden="true">
+                    Sign In
+                </label>
+                <input type="text" name="txt" placeholder="User name" >
+                <input type="email" name="email" placeholder="Email" >
+                <input type="password" name="pswd" placeholder="Password" >
+                <button onclick="vform()"><a href="main.html" style="text-decoration: none; color: white;">Sign In</a></button>
+                
+            </form>
+
+        </div>
+        <div class="login">
+            <form action="#" name="myform" onsubmit="return validateform()">
+                <label for="chk" aria-hidden="true">Sign Up</label>
+                <input type="email" name="email" placeholder="Email" >
+                <input type="Password" name="pswd" placeholder="Password" >
+                <input type="Password" name="cpswd" placeholder="Confirm Password" >
+
+                <button>Sign Up</button>
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</html>
